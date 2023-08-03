@@ -1,0 +1,16 @@
+{
+  "name": "rypub",
+  "version": "1.0.0",
+  "description": "ePub reader",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "epubjs": "^0.3.93"
+  },
+  "devDependencies": {
+    "electron": "^25.4.0"
+  }
+}
