@@ -8,6 +8,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1280,
         height: 720,
+        icon: __dirname + './assets/icons/win/1024x1024.ico',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
