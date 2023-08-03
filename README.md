@@ -15,7 +15,7 @@ your favorite EPUB books right on your desktop.
 ## Installation
 
 To install rypub, you can download the latest release for your operating system from
-the [Releases](https://github.com/ryd3v/ryPub-Electron/releases/tag/v1.0) page.
+the [Releases](https://github.com/ryd3v/ryPub-Electron/releases) page.
 
 If you want to run the application from source, follow these steps:
 
