@@ -21,10 +21,17 @@
     "electron-packager": "^17.1.1"
   },
   "build": {
-    "appId": "com.ryd3v.com",
+    "appId": "com.ryd3v.rypub",
     "productName": "ryPub",
     "directories": {
       "output": "build"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "../src/assets/icons/png/1024x1024.png",
+      "category": "Office"
     },
     "win": {
       "icon": "./src/assets/icons/win/1024x1024.ico",
