@@ -3,15 +3,13 @@
   "author": "Ryan Collins",
   "copyright": "© 2023, ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ePub reader",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "pack": "electron-builder --dir",
+    "build": "electron-builder --dir",
     "dist": "electron-builder",
-    "package-win": "electron-packager . rypub --overwrite --platform=win32 --arch=x64 --icon=./assets/icons/win/1024x1024.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='rypub'",
-    "package-linux": "electron-packager . rypub --overwrite --asar --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -24,9 +22,13 @@
   },
   "build": {
     "appId": "com.ryd3v.com",
+    "productName": "ryPub",
+    "directories": {
+      "output": "build"
+    },
     "win": {
-      "target": "nsis",
-      "icon": "./assets/icons/win/1024x1024.ico"
+      "icon": "./src/assets/icons/win/1024x1024.ico",
+      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,

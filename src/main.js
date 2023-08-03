@@ -7,7 +7,7 @@ let mainWindow
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 600,
-        height: 1000,
+        height: 900,
         icon: __dirname + './assets/icons/win/1024x1024.ico',
         webPreferences: {
             nodeIntegration: true,
@@ -16,7 +16,7 @@ function createWindow() {
         }
     })
 
-    mainWindow.loadFile('index.html')
+    mainWindow.loadFile('src/index.html')
 }
 
 app.whenReady().then(() => {
