@@ -1,6 +1,8 @@
 {
   "name": "rypub",
   "author": "Ryan Collins",
+  "copyright": "© 2023, ryd3v.",
+  "homepage": "https://ryd3v.com",
   "version": "1.0.0",
   "description": "ePub reader",
   "main": "main.js",
