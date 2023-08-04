@@ -1,6 +1,6 @@
 const {app, BrowserWindow, dialog, Menu} = require('electron')
-const fs = require('fs')
 const path = require('path')
+const {version} = require('../package.json');
 
 let mainWindow
 
@@ -11,12 +11,13 @@ function createWindow() {
         icon: path.join(__dirname, 'assets/icons/win/1024x1024.ico'),
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false,
-            enableRemoteModule: true
+            contextIsolation: false
         }
     })
 
     mainWindow.loadFile('src/index.html')
+        .then(() => console.log('File loaded successfully'))
+        .catch(error => console.error(`Failed to load file: ${error}`));
 }
 
 app.whenReady().then(() => {
@@ -48,6 +49,22 @@ const menu = Menu.buildFromTemplate([
                         }
                     }).catch(err => {
                         console.log(err)
+                    })
+                }
+            },
+            {
+                label: 'About',
+                click: function () {
+                    let aboutWindow = new BrowserWindow({
+                        width: 400,
+                        height: 400,
+                        webPreferences: {
+                            nodeIntegration: true,
+                            contextIsolation: false
+                        }
+                    })
+                    aboutWindow.loadFile('src/about.html').then(() => {
+                        aboutWindow.webContents.send('app_version', version);
                     })
                 }
             },

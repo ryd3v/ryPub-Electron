@@ -28,6 +28,11 @@ ipcRenderer.on('file-closed', () => {
     document.getElementById('viewer').innerHTML = '';
 });
 
+ipcRenderer.on('app_version', (event, appVersion) => {
+    // Assuming you have an element with an id 'app-version' in your about.html
+    document.getElementById('app-version').innerText = `App version: ${appVersion}`;
+});
+
 // Event listener for "Next" button
 document.getElementById('next').addEventListener('click', () => {
     rendition.next();

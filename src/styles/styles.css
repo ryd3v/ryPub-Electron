@@ -45,8 +45,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('src/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', "JetBrains Mono", sans-serif, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
