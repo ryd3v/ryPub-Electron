@@ -3,43 +3,26 @@
   "author": "Ryan Collins",
   "copyright": "© 2023, ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ePub reader",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder --dir",
-    "dist": "electron-builder",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
     "epubjs": "^0.3.93"
   },
   "devDependencies": {
-    "electron": "^25.4.0",
-    "electron-builder": "^24.6.3",
-    "electron-packager": "^17.1.1"
-  },
-  "build": {
-    "appId": "com.ryd3v.rypub",
-    "productName": "ryPub",
-    "directories": {
-      "output": "build"
-    },
-    "linux": {
-      "target": [
-        "AppImage"
-      ],
-      "icon": "../src/assets/icons/png/1024x1024.png",
-      "category": "Office"
-    },
-    "win": {
-      "icon": "./src/assets/icons/win/1024x1024.ico",
-      "target": "nsis"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
+    "@electron-forge/cli": "^6.2.1",
+    "@electron-forge/maker-deb": "^6.2.1",
+    "@electron-forge/maker-rpm": "^6.2.1",
+    "@electron-forge/maker-squirrel": "^6.2.1",
+    "@electron-forge/maker-zip": "^6.2.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "electron": "^25.4.0"
   }
 }

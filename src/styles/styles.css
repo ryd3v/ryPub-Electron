@@ -1,59 +1,20 @@
 @font-face {
     font-family: 'Roboto';
-    src: url('src/fonts/Roboto-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('src/fonts/Roboto-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('src/fonts/Roboto-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('src/fonts/Roboto-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('src/fonts/Roboto-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('src/fonts/Roboto-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('src/fonts/Roboto-Black.ttf') format('truetype');
-    font-weight: 900;
+    src: url('../assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('src/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/JetBrainsMono-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
+
 body {
-    font-family: 'Roboto', "JetBrains Mono", sans-serif, monospace;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +24,11 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+pre, code {
+    font-family: 'JetBrains Mono', monospace;
+}
+
 
 #viewer {
     flex: 1;
