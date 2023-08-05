@@ -7,10 +7,13 @@ your favorite EPUB books right on your desktop.
 
 ## Features
 
-- Open and read EPUB files
-- Keyboard shortcuts for easy navigation
-- Support for theming and custom fonts (In progress..)
+- Open and read EPUB files from your local system
 - Responsive design
+- Navigation with both on-screen and keyboard controls (ArrowRight and ArrowLeft keys)
+- Dynamic Table of Contents (TOC): The TOC of each EPUB file is now integrated into the application menu. Selecting a
+  TOC item will navigate to the corresponding section in the EPUB file.
+- Fonts: Application uses local Google Fonts - Roboto for general text and JetBrains Mono for preformatted text
+- About Window: Provides information about the current version of the application
 
 ## Installation
 
