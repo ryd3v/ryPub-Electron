@@ -9,7 +9,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 600,
         height: 900,
-        icon: path.join(__dirname, 'assets/icons/win/1024x1024.ico'),
+        icon: "src/images/256x256.png",
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -79,8 +79,8 @@ const generateMenu = () => {
                     label: 'About',
                     click: function () {
                         let aboutWindow = new BrowserWindow({
-                            width: 400,
-                            height: 400,
+                            width: 500,
+                            height: 500,
                             webPreferences: {
                                 nodeIntegration: true,
                                 contextIsolation: false

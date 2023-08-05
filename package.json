@@ -3,7 +3,7 @@
   "author": "Ryan Collins",
   "copyright": "© 2023, ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ePub reader",
   "main": "src/main.js",
   "license": "MIT",
@@ -21,13 +21,12 @@
     },
     "linux": {
       "category": "Office",
-      "icon": "../src/assets/icons/png/1024x1024.png",
+      "icon": "src/assets/icons/png/1024x1024.png",
       "target": [
         "AppImage"
       ]
     }
   },
-
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "epubjs": "^0.3.93"
