@@ -3,15 +3,31 @@
   "author": "Ryan Collins",
   "copyright": "© 2023, ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ePub reader",
   "main": "src/main.js",
+  "license": "MIT",
   "scripts": {
     "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "build": "electron-builder"
   },
+  "build": {
+    "appId": "com.ryd3v.rypub",
+    "directories": {
+      "output": "build"
+    },
+    "linux": {
+      "category": "Office",
+      "icon": "../src/assets/icons/png/1024x1024.png",
+      "target": [
+        "AppImage"
+      ]
+    }
+  },
+
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "epubjs": "^0.3.93"
@@ -23,6 +39,7 @@
     "@electron-forge/maker-squirrel": "^6.2.1",
     "@electron-forge/maker-zip": "^6.2.1",
     "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
-    "electron": "^25.4.0"
+    "electron": "^25.4.0",
+    "electron-builder": "^24.6.3"
   }
 }
