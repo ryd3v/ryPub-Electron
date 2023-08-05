@@ -53,7 +53,7 @@ const menuTemplate = [
                 }
             },
             {
-                label: 'TOC',
+                label: 'Table of Contents',
                 submenu: tocMenu
             },
             {
