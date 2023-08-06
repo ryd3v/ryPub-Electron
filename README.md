@@ -20,7 +20,7 @@ your favorite EPUB books right on your desktop.
 To install rypub, you can download the latest release for your operating system from
 the [Releases](https://github.com/ryd3v/ryPub-Electron/releases) page.
 
-If you want to run the application from source, follow these steps:
+If you want to build the application from source, follow these steps:
 
 1. Clone the repository:
 
@@ -40,6 +40,22 @@ npm install
 ```
 npm start
 ```
+
+### Debian
+
+Install on Debian based distributions
+
+```
+dpkg -i ./rypub_1.0.x_amd64.deb
+```
+
+### Fedora
+
+```
+dnf install ./rypub-1.0.x-x.x86_64.rpm
+```
+
+---
 
 ## Usage
 
