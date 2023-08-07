@@ -81,6 +81,7 @@ const generateMenu = () => {
                         let aboutWindow = new BrowserWindow({
                             width: 500,
                             height: 500,
+                            icon: "src/images/256x256.png",
                             webPreferences: {
                                 nodeIntegration: true,
                                 contextIsolation: false

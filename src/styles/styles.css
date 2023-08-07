@@ -14,8 +14,6 @@
 
 
 body {
-    background-color: #292a2d;
-    color: white;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -33,6 +31,11 @@ a {
 
 pre, code {
     font-family: 'JetBrains Mono', monospace;
+}
+
+.cardBack {
+    background-color: #292a2d;
+    color: white;
 }
 
 .about-container {
@@ -54,7 +57,7 @@ pre, code {
 #viewer {
     flex: 1;
     width: 100%;
-    background-color: white;
+    background-color: transparent;
 }
 
 #button-group {
@@ -67,34 +70,8 @@ pre, code {
 
 button {
     margin: 0 4px;
-    padding: 5px 10px;
-    font-size: 14px;
-    color: #ffffff;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 6px;
+    padding: 4px 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button:active {
-    background-color: #00408a;
-}
-
-button:focus {
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
-}
-
-button:disabled {
-    background-color: #c0c0c0;
-    cursor: not-allowed;
-}
-
-button {
-    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border: none;
 }
