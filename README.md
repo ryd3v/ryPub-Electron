@@ -40,6 +40,21 @@ npm install
 ```
 npm start
 ```
+To make and package please follow the instructions to setup [Electron Forge](https://www.electronforge.io/) for your OS.
+
+To package for testing
+
+```
+npm package
+```
+
+### Windows
+
+Install on Windows
+
+```
+run rypub-1.0.x Setup.exe
+```
 
 ### Debian
 
@@ -56,6 +71,8 @@ dnf install ./rypub-1.0.x-x.x86_64.rpm
 ```
 
 ---
+
+Or run the AppImage
 
 ## Usage
 
