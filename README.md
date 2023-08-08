@@ -4,11 +4,13 @@ ryPub is a simple yet powerful EPUB reader built with Electron and epub.js. It p
 your favorite EPUB books right on your desktop.
 
 ![ALT](https://github.com/ryd3v/ryPub-Electron/blob/main/Screenshot%202023-08-07%20153701.png)
+![ALT](https://github.com/ryd3v/ryPub-Electron/blob/main/dark-mode.png)
 
 ## Features
 
 - Open and read EPUB files from your local system
 - Responsive design
+- Dark Mode
 - Navigation with both on-screen and keyboard controls (ArrowRight and ArrowLeft keys)
 - Dynamic Table of Contents (TOC): The TOC of each EPUB file is now integrated into the application menu. Selecting a
   TOC item will navigate to the corresponding section in the EPUB file.
