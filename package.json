@@ -25,6 +25,9 @@
       "target": [
         "AppImage"
       ]
+    },
+    "win": {
+      "icon": "src/images/256x256.ico"
     }
   },
   "dependencies": {
