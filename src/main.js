@@ -76,8 +76,8 @@ const generateMenu = () => {
             label: 'View',
             submenu: [
                 {
-                    label: 'Dark Mode',
-                    type: 'checkbox',
+                    label: '🔆 Dark Mode',
+                    // type: 'checkbox',
                     click: function () {
                         mainWindow.webContents.send('toggle-dark-mode');
                     }
