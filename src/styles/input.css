@@ -23,3 +23,21 @@ a {
 pre, code {
     font-family: 'JetBrains Mono', monospace;
 }
+
+/* Dark mode xD */
+
+body {
+    @apply bg-white text-black;
+}
+
+.dark body {
+    @apply bg-black text-white;
+}
+
+.dark button svg {
+    fill: white;
+}
+
+.dark a {
+    color: #3b82f6;
+}

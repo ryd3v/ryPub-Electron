@@ -40,6 +40,40 @@ ipcRenderer.on('toc-item-click', (event, href) => {
     rendition.display(href);
 });
 
+// Dark mode
+ipcRenderer.on('toggle-dark-mode', () => {
+    const currentClass = document.documentElement.className;
+    if (currentClass === 'dark') {
+        document.documentElement.className = '';
+        if (rendition) {
+            rendition.themes.default({
+                'body': {
+                    'font-family': 'Roboto, sans-serif',
+                    'background-color': 'white',
+                    'color': 'black'
+                },
+                'pre, code': {
+                    'font-family': 'JetBrains Mono, sans-serif'
+                }
+            });
+        }
+    } else {
+        document.documentElement.className = 'dark';
+        if (rendition) {
+            rendition.themes.default({
+                'body': {
+                    'font-family': 'Roboto, sans-serif',
+                    'background-color': '#18181b',
+                    'color': '#e4e4e7'
+                },
+                'pre, code': {
+                    'font-family': 'JetBrains Mono, sans-serif'
+                }
+            });
+        }
+    }
+});
+
 document.getElementById('next').addEventListener('click', () => {
     rendition.next();
 });

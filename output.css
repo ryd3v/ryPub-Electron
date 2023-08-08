@@ -661,3 +661,27 @@ a {
 pre, code {
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* Dark mode xD */
+
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity));
+}
+
+.dark body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(228 228 231 / var(--tw-text-opacity));
+}
+
+.dark button svg {
+  fill: white;
+}
+
+.dark a {
+  color: #3b82f6;
+}
