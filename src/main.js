@@ -1,6 +1,18 @@
 const {app, BrowserWindow, dialog, Menu, ipcMain} = require('electron')
 const path = require('path')
 const {version} = require('../package.json');
+const Store = require('electron-store');
+
+const store = new Store();
+
+ipcMain.on('electron-store-get-data', (event, arg) => {
+    if (arg && typeof arg.key !== 'undefined') {
+        event.returnValue = store.get(arg.key, arg.defaultValue);
+    } else {
+        console.error('electron-store-get-data called without a valid key');
+        event.returnValue = null;
+    }
+});
 
 let mainWindow
 let tocMenu = []
@@ -22,12 +34,12 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-    createWindow()
-
+    createWindow();
+    
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
-    })
-})
+    });
+});
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') app.quit()
@@ -77,7 +89,6 @@ const generateMenu = () => {
             submenu: [
                 {
                     label: '🔆 Dark Mode',
-                    // type: 'checkbox',
                     click: function () {
                         mainWindow.webContents.send('toggle-dark-mode');
                     }

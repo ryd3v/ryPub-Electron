@@ -1,5 +1,7 @@
 const {ipcRenderer} = require('electron')
 const ePub = require("epubjs").default
+const Store = require('electron-store');
+const store = new Store();
 
 let rendition;
 
@@ -11,6 +13,13 @@ ipcRenderer.on('file-opened',
             const {toc} = book.navigation;
             // console.log(toc);
             ipcRenderer.send('toc-ready', toc);
+            // Save state
+            const lastLocation = store.get('lastKnownLocation');
+            if (lastLocation) {
+                rendition.display(lastLocation);
+            } else {
+                rendition.display();
+            }
         });
 
         rendition.themes.default({
@@ -21,7 +30,10 @@ ipcRenderer.on('file-opened',
                 'font-family': 'JetBrains Mono, sans-serif'
             }
         });
-        rendition.display();
+
+        rendition.on('relocated', (location) => {
+            store.set('lastKnownLocation', location.start.cfi);
+        });
     })
 
 ipcRenderer.on('file-closed', () => {
@@ -40,7 +52,6 @@ ipcRenderer.on('toc-item-click', (event, href) => {
     rendition.display(href);
 });
 
-// Dark mode
 ipcRenderer.on('toggle-dark-mode', () => {
     const currentClass = document.documentElement.className;
     if (currentClass === 'dark') {
