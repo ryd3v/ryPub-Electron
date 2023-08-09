@@ -86,10 +86,10 @@ through the book using the left and right arrow keys, or by using the next and p
 To build the application for your current platform, you can run:
 
 ```
-npm run dist
+npm run make
 ```
 
-This will create a distributable package in the `dist` directory.
+This will create a distributable packages in the `out/make` directory.
 
 
 ## Support 
