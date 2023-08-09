@@ -91,6 +91,13 @@ npm run dist
 
 This will create a distributable package in the `dist` directory.
 
+
+## Support 
+
+If you like this app
+
+[![Alt text](https://github.com/ryd3v/ryPub-Electron/blob/main/bmc-button.png)](https://www.buymeacoffee.com/ryd3v)
+
 ## Contributing
 
 We welcome contributions to ryRub! If you have a bug fix, feature request, or other enhancement, feel free to open a
