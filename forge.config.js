@@ -6,20 +6,18 @@ module.exports = {
     rebuildConfig: {},
     makers: [
         {
-            name: '@electron-forge/maker-squirrel',
-            config: {},
-        },
-        {
-            name: '@electron-forge/maker-zip',
-            platforms: ['darwin'],
-        },
-        {
             name: '@electron-forge/maker-deb',
             config: {
                 options: {
                     icon: 'src/images/1024x1024.png'
                 }
             },
+        },
+        {
+            name: '@electron-forge/maker-pkg',
+            options: {
+                icon: 'src/images/1024x1024.png'
+            }
         },
         {
             name: '@electron-forge/maker-rpm',
