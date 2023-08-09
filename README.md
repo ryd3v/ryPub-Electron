@@ -96,7 +96,7 @@ This will create a distributable package in the `dist` directory.
 
 If you like this app
 
-[![Alt text](https://github.com/ryd3v/ryPub-Electron/blob/main/bmc-button.png)](https://www.buymeacoffee.com/ryd3v)
+[![Alt text](https://github.com/ryd3v/ryPub-Electron/blob/main/black-button.png)](https://www.buymeacoffee.com/ryd3v)
 
 ## Contributing
 
