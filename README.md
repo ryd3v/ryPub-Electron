@@ -94,7 +94,7 @@ This will create a distributable package in the `dist` directory.
 
 ## Support 
 
-<a href="https://www.buymeacoffee.com/ryd3v">
+<a href="https://www.buymeacoffee.com/ryd3v" target="_blank">
   <img src="https://github.com/ryd3v/ryPub-Electron/blob/main/black-button.png" alt="Alt text" width="225" height="75">
 </a>
 
