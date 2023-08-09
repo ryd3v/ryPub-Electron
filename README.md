@@ -94,11 +94,11 @@ This will create a distributable package in the `dist` directory.
 
 ## Support 
 
-If you like this app
-
-[![Alt text](https://github.com/ryd3v/ryPub-Electron/blob/main/black-button.png)](https://www.buymeacoffee.com/ryd3v)
+<a href="https://www.buymeacoffee.com/ryd3v">
+  <img src="https://github.com/ryd3v/ryPub-Electron/blob/main/black-button.png" alt="Alt text" width="225" height="75">
+</a>
 
 ## Contributing
 
-We welcome contributions to ryRub! If you have a bug fix, feature request, or other enhancement, feel free to open a
+I welcome contributions to ryRub Simple Reader! If you have a bug fix, feature request, or other enhancement, feel free to open a
 pull request.
