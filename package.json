@@ -27,7 +27,7 @@
       ]
     },
     "win": {
-      "target": "squirrel",
+      "target": "nsis",
       "publisherName": "Ryan Collins",
       "icon": "src/images/256x256.ico"
     }
