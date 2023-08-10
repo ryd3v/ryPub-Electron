@@ -11,9 +11,7 @@ ipcRenderer.on('file-opened',
         rendition = book.renderTo("viewer", {width: "100%", height: "100%"});
         book.ready.then(() => {
             const {toc} = book.navigation;
-            // console.log(toc);
             ipcRenderer.send('toc-ready', toc);
-            // Save state
             const lastLocation = store.get('lastKnownLocation');
             if (lastLocation) {
                 rendition.display(lastLocation);
@@ -64,7 +62,9 @@ ipcRenderer.on('toggle-dark-mode', () => {
                     'color': 'black'
                 },
                 'pre, code': {
-                    'font-family': 'JetBrains Mono, sans-serif'
+                    'font-family': 'JetBrains Mono, sans-serif',
+                    'white-space': 'pre-wrap',
+                    'word-wrap': 'break-word'
                 }
             });
         }
@@ -78,7 +78,9 @@ ipcRenderer.on('toggle-dark-mode', () => {
                     'color': '#e4e4e7'
                 },
                 'pre, code': {
-                    'font-family': 'JetBrains Mono, sans-serif'
+                    'font-family': 'JetBrains Mono, sans-serif',
+                    'white-space': 'pre-wrap',
+                    'word-wrap': 'break-word'
                 }
             });
         }

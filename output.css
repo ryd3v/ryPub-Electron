@@ -660,15 +660,19 @@ a {
 
 pre, code {
   font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
 }
-
-/* Dark mode xD */
 
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(24 24 27 / var(--tw-text-opacity));
+  font-size: 16px;
 }
 
 .dark body {
@@ -676,6 +680,7 @@ body {
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  font-size: 16px;
 }
 
 .dark button svg {

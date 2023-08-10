@@ -1,11 +1,11 @@
 {
   "name": "rypub",
   "author": "Ryan Collins",
-  "copyright": "© 2023, ryd3v.",
+  "copyright": "© 2023 ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "ePub reader",
-  "main": "src/main.js",
+  "main": "src/main/main.js",
   "license": "MIT",
   "scripts": {
     "start": "electron-forge start",
@@ -27,7 +27,8 @@
       ]
     },
     "win": {
-      "target": "msi",
+      "target": "squirrel",
+      "publisherName": "Ryan Collins",
       "icon": "src/images/256x256.ico"
     }
   },
@@ -39,12 +40,11 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.3.0",
     "@electron-forge/maker-deb": "^6.3.0",
-    "@electron-forge/maker-pkg": "^6.3.0",
     "@electron-forge/maker-rpm": "^6.3.0",
-    "@electron-forge/maker-zip": "^6.3.0",
     "@electron-forge/plugin-auto-unpack-natives": "^6.3.0",
-    "electron": "^25.4.0",
+    "electron": "^25.5.0",
     "electron-builder": "^24.6.3",
+    "electron-builder-squirrel-windows": "^24.6.3",
     "tailwindcss": "^3.3.3"
   }
 }

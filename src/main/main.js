@@ -1,6 +1,6 @@
 const {app, BrowserWindow, dialog, Menu, ipcMain} = require('electron')
 const path = require('path')
-const {version} = require('../package.json');
+const {version} = require('../../package.json');
 const Store = require('electron-store');
 
 const store = new Store();
@@ -27,7 +27,7 @@ function createWindow() {
             contextIsolation: false
         }
     })
-    // mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
     mainWindow.loadFile('src/index.html')
         .then(() => console.log('File loaded successfully'))
         .catch(error => console.error(`Failed to load file: ${error}`));
@@ -35,7 +35,7 @@ function createWindow() {
 
 app.whenReady().then(() => {
     createWindow();
-    
+
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
     });

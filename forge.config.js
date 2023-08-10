@@ -14,12 +14,6 @@ module.exports = {
             },
         },
         {
-            name: '@electron-forge/maker-pkg',
-            options: {
-                icon: 'src/images/1024x1024.png'
-            }
-        },
-        {
             name: '@electron-forge/maker-rpm',
             config: {
                 options: {

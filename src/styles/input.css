@@ -22,16 +22,21 @@ a {
 
 pre, code {
     font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
 }
-
-/* Dark mode xD */
 
 body {
     @apply bg-white text-black;
+    font-size: 16px;
 }
 
 .dark body {
     @apply bg-black text-white;
+    font-size: 16px;
 }
 
 .dark button svg {
