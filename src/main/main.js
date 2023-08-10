@@ -1,5 +1,5 @@
-const {app, BrowserWindow, dialog, Menu, ipcMain} = require('electron')
-const path = require('path')
+const {app, BrowserWindow, dialog, Menu, ipcMain} = require('electron');
+const path = require('path');
 const {version} = require('../../package.json');
 const Store = require('electron-store');
 
@@ -14,8 +14,9 @@ ipcMain.on('electron-store-get-data', (event, arg) => {
     }
 });
 
-let mainWindow
-let tocMenu = []
+let mainWindow;
+let booksWindow = null;
+let tocMenu = [];
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -26,24 +27,44 @@ function createWindow() {
             nodeIntegration: true,
             contextIsolation: false
         }
-    })
-    //mainWindow.webContents.openDevTools();
+    });
+
     mainWindow.loadFile('src/index.html')
         .then(() => console.log('File loaded successfully'))
         .catch(error => console.error(`Failed to load file: ${error}`));
+}
+
+function openBooksWindow(directoryPath) {
+    booksWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        icon: "src/images/256x256.png",
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    });
+
+    booksWindow.loadFile('src/books.html').then(() => {
+        booksWindow.webContents.send('load-books', directoryPath);
+    });
+
+    booksWindow.on('closed', () => {
+        booksWindow = null;
+    });
 }
 
 app.whenReady().then(() => {
     createWindow();
 
     app.on('activate', function () {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow()
+        if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
 });
 
 app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') app.quit()
-})
+    if (process.platform !== 'darwin') app.quit();
+});
 
 const generateMenu = () => {
     return [
@@ -58,11 +79,26 @@ const generateMenu = () => {
                             filters: [{name: 'EPUB', extensions: ['epub']}]
                         }).then(file => {
                             if (!file.canceled) {
-                                mainWindow.webContents.send('file-opened', path.resolve(file.filePaths[0]))
+                                mainWindow.webContents.send('file-opened', path.resolve(file.filePaths[0]));
                             }
                         }).catch(err => {
-                            console.log(err)
-                        })
+                            console.log(err);
+                        });
+                    }
+                },
+                {
+                    label: 'Directory',
+                    click: function () {
+                        dialog.showOpenDialog(mainWindow, {
+                            properties: ['openDirectory']
+                        }).then(directory => {
+                            if (!directory.canceled) {
+                                store.set('booksDirectory', directory.filePaths[0]);
+                                openBooksWindow(directory.filePaths[0]);
+                            }
+                        }).catch(err => {
+                            console.log(err);
+                        });
                     }
                 },
                 {
@@ -72,18 +108,19 @@ const generateMenu = () => {
                 {
                     label: 'Close',
                     click: () => {
-                        mainWindow.webContents.send('file-closed')
+                        mainWindow.webContents.send('file-closed');
                     }
                 },
                 {type: 'separator'},
                 {
                     label: 'Exit',
                     click: function () {
-                        app.quit()
+                        app.quit();
                     }
                 }
             ]
         },
+
         {
             label: 'View',
             submenu: [
@@ -109,15 +146,15 @@ const generateMenu = () => {
                                 nodeIntegration: true,
                                 contextIsolation: false
                             }
-                        })
+                        });
                         aboutWindow.loadFile('src/about.html').then(() => {
                             aboutWindow.webContents.send('app_version', version);
-                        })
+                        });
                     }
                 }
             ]
         }
-    ]
+    ];
 };
 
 Menu.setApplicationMenu(Menu.buildFromTemplate(generateMenu()));
@@ -134,4 +171,18 @@ ipcMain.on('toc-ready', (event, toc) => {
 
     const menu = Menu.buildFromTemplate(generateMenu());
     Menu.setApplicationMenu(menu);
+});
+
+ipcMain.on('open-book', (event, bookPath) => {
+    mainWindow.webContents.send('file-opened', bookPath);
+    if (booksWindow) {  // <-- Check if the booksWindow exists
+        booksWindow.close();
+    }
+});
+
+ipcMain.on('close-books-window', () => {
+    if (booksWindow) {
+        booksWindow.close();
+        booksWindow = null;
+    }
 });

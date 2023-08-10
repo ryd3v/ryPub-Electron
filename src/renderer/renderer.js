@@ -6,18 +6,21 @@ const store = new Store();
 let rendition;
 
 ipcRenderer.on('file-opened',
-    (event, file) => {
-        const book = ePub(file);
+    (event, data) => {
+        const book = ePub(data.path);
+        console.log("Received file-opened event for:", data.path);
+
         rendition = book.renderTo("viewer", {width: "100%", height: "100%"});
         book.ready.then(() => {
             const {toc} = book.navigation;
             ipcRenderer.send('toc-ready', toc);
-            const lastLocation = store.get('lastKnownLocation');
+            const lastLocation = store.get(data.title);
             if (lastLocation) {
                 rendition.display(lastLocation);
             } else {
                 rendition.display();
             }
+
         });
 
         rendition.themes.default({
@@ -30,7 +33,7 @@ ipcRenderer.on('file-opened',
         });
 
         rendition.on('relocated', (location) => {
-            store.set('lastKnownLocation', location.start.cfi);
+            store.set(data.title, location.start.cfi);
         });
     })
 

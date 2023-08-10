@@ -46,3 +46,40 @@ body {
 .dark a {
     color: #3b82f6;
 }
+
+#booksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.book-item {
+    /*border: 1px solid #ddd;*/
+    padding: 10px;
+    /*border-radius: 5px;*/
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.book-item img {
+    max-width: 100px; /* Adjust to your preferred size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.book-item span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
