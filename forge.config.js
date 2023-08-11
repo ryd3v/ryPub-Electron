@@ -1,7 +1,7 @@
 module.exports = {
     packagerConfig: {
         asar: true,
-        icon: "src/images/1024x1024"
+        icon: "src/images/book-icon"
     },
     rebuildConfig: {},
     makers: [
@@ -9,7 +9,7 @@ module.exports = {
             name: '@electron-forge/maker-deb',
             config: {
                 options: {
-                    icon: 'src/images/1024x1024.png'
+                    icon: 'src/images/book-icon.png'
                 }
             },
         },
@@ -17,7 +17,7 @@ module.exports = {
             name: '@electron-forge/maker-rpm',
             config: {
                 options: {
-                    icon: 'src/images/1024x1024.png'
+                    icon: 'src/images/book-icon.png'
                 }
             },
         },

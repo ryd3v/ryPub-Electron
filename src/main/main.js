@@ -22,7 +22,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 600,
         height: 900,
-        icon: "src/images/256x256.png",
+        icon: "src/images/book-icon.png",
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -39,7 +39,7 @@ function openBooksWindow(directoryPath) {
     booksWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        icon: "src/images/256x256.png",
+        icon: "src/images/book-icon.png",
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -143,7 +143,7 @@ const generateMenu = () => {
                         let aboutWindow = new BrowserWindow({
                             width: 500,
                             height: 500,
-                            icon: "src/images/256x256.png",
+                            icon: "src/images/book-icon.png",
                             webPreferences: {
                                 nodeIntegration: true,
                                 contextIsolation: false

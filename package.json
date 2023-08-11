@@ -21,7 +21,7 @@
     },
     "linux": {
       "category": "Office",
-      "icon": "src/images/1024x1024.png",
+      "icon": "src/images/book-icon.png",
       "target": [
         "AppImage"
       ]
@@ -29,12 +29,11 @@
     "win": {
       "target": "nsis",
       "publisherName": "Ryan Collins",
-      "icon": "src/images/256x256.ico"
+      "icon": "src/images/book-icon.ico"
     }
   },
   "dependencies": {
     "adm-zip": "^0.5.10",
-    "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.1.0",
     "epubjs": "^0.3.93",
     "xml2js": "^0.6.2"
