@@ -8,7 +8,7 @@ let rendition;
 ipcRenderer.on('file-opened',
     (event, data) => {
         const book = ePub(data.path);
-        console.log("Received file-opened event for:", data.path);
+        //console.log("Received file-opened event for:", data.path);
 
         rendition = book.renderTo("viewer", {width: "100%", height: "100%"});
         book.ready.then(() => {

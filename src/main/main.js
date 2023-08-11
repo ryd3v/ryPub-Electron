@@ -9,7 +9,7 @@ ipcMain.on('electron-store-get-data', (event, arg) => {
     if (arg && typeof arg.key !== 'undefined') {
         event.returnValue = store.get(arg.key, arg.defaultValue);
     } else {
-        console.error('electron-store-get-data called without a valid key');
+        //console.error('electron-store-get-data called without a valid key');
         event.returnValue = null;
     }
 });
@@ -35,6 +35,7 @@ function createWindow() {
 }
 
 function openBooksWindow(directoryPath) {
+    console.log("Opening books window...");
     booksWindow = new BrowserWindow({
         width: 800,
         height: 600,
@@ -46,6 +47,7 @@ function openBooksWindow(directoryPath) {
     });
 
     booksWindow.loadFile('src/books.html').then(() => {
+        console.log("Sending directory path to books window:", directoryPath);
         booksWindow.webContents.send('load-books', directoryPath);
     });
 
@@ -160,6 +162,7 @@ const generateMenu = () => {
 Menu.setApplicationMenu(Menu.buildFromTemplate(generateMenu()));
 
 ipcMain.on('toc-ready', (event, toc) => {
+    // console.log("Received toc-ready with toc:", toc);
     tocMenu = toc.map(tocItem => {
         return {
             label: tocItem.label,
@@ -174,6 +177,7 @@ ipcMain.on('toc-ready', (event, toc) => {
 });
 
 ipcMain.on('open-book', (event, bookPath) => {
+    console.log("Received open-book event with path:", bookPath);
     mainWindow.webContents.send('file-opened', bookPath);
     if (booksWindow) {  // <-- Check if the booksWindow exists
         booksWindow.close();
@@ -181,8 +185,13 @@ ipcMain.on('open-book', (event, bookPath) => {
 });
 
 ipcMain.on('close-books-window', () => {
+    console.log("Received close-books-window event.");
     if (booksWindow) {
         booksWindow.close();
         booksWindow = null;
     }
+});
+
+ipcMain.on('log-message', (event, message) => {
+    console.log(message);
 });
