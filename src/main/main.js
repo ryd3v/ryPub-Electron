@@ -179,7 +179,7 @@ ipcMain.on('toc-ready', (event, toc) => {
 ipcMain.on('open-book', (event, bookPath) => {
     console.log("Received open-book event with path:", bookPath);
     mainWindow.webContents.send('file-opened', bookPath);
-    if (booksWindow) {  // <-- Check if the booksWindow exists
+    if (booksWindow) {
         booksWindow.close();
     }
 });
@@ -190,8 +190,4 @@ ipcMain.on('close-books-window', () => {
         booksWindow.close();
         booksWindow = null;
     }
-});
-
-ipcMain.on('log-message', (event, message) => {
-    console.log(message);
 });

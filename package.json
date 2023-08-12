@@ -3,7 +3,7 @@
   "author": "Ryan Collins",
   "copyright": "© 2023 ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "2.0.2",
+  "version": "2.0.1",
   "description": "ePub reader",
   "main": "src/main/main.js",
   "license": "MIT",
@@ -34,7 +34,9 @@
   },
   "dependencies": {
     "electron-store": "^8.1.0",
-    "epubjs": "^0.3.93"
+    "epub": "^1.2.1",
+    "epubjs": "^0.3.93",
+    "node-epub": "^1.0.0-beta.5"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.3.0",
