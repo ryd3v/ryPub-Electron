@@ -3,8 +3,8 @@
 ryPub is a simple yet powerful EPUB reader built with Electron and epub.js. It provides a straightforward way to read
 your favorite EPUB books right on your desktop.
 
-![ALT](https://github.com/ryd3v/ryPub-Electron/blob/main/Screenshot%202023-08-07%20153701.png)
-![ALT](https://github.com/ryd3v/ryPub-Electron/blob/main/dark-mode.png)
+![ALT](https://github.com/ryd3v/ryPub-Electron/blob/main/Screenshot.png)
+
 
 ## Features
 
