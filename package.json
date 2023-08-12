@@ -4,14 +4,11 @@
   "copyright": "© 2023 ryd3v.",
   "homepage": "https://ryd3v.com",
   "version": "2.0.1",
-  "description": "ePub reader",
+  "description": "ryPub Simple ePub Reader",
   "main": "src/main/main.js",
   "license": "MIT",
   "scripts": {
-    "start": "electron-forge start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
+    "start": "electron .",
     "build": "electron-builder"
   },
   "build": {
@@ -35,14 +32,9 @@
   "dependencies": {
     "electron-store": "^8.1.0",
     "epub": "^1.2.1",
-    "epubjs": "^0.3.93",
-    "node-epub": "^1.0.0-beta.5"
+    "epubjs": "^0.3.93"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.3.0",
-    "@electron-forge/maker-deb": "^6.3.0",
-    "@electron-forge/maker-rpm": "^6.3.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^6.3.0",
     "electron": "^25.5.0",
     "electron-builder": "^24.6.3",
     "electron-builder-squirrel-windows": "^24.6.3",
