@@ -9,10 +9,9 @@ your favorite EPUB books right on your desktop.
 ## Features
 
 - Open and read EPUB files from your local system
-- Responsive design
-- Dark Mode
-- Navigation with both on-screen and keyboard controls (ArrowRight and ArrowLeft keys)
-- Dynamic Table of Contents (TOC): The TOC of each EPUB file is now integrated into the application menu. Selecting a
+- Responsive design, with dark mode
+- Navigation with both on-screen and keyboard controls (Right Arrow and Left Arrow keys)
+- Dynamic Table of Contents: The TOC of each EPUB file is now integrated into the application menu. Selecting a
   TOC item will navigate to the corresponding section in the EPUB file.
 - Fonts: Application uses local Google Fonts - Roboto for general text and JetBrains Mono for preformatted text
 - About Window: Provides information about the current version of the application
@@ -42,13 +41,6 @@ npm install
 ```
 npm start
 ```
-To make and package please follow the instructions to setup [Electron Forge](https://www.electronforge.io/) for your OS.
-
-To package for testing
-
-```
-npm package
-```
 
 ### Windows
 
@@ -58,23 +50,13 @@ Install on Windows
 run rypub-1.0.x Setup.exe
 ```
 
-### Debian
+### Linux
 
-Install on Debian based distributions
-
-```
-dpkg -i ./rypub_1.0.x_amd64.deb
-```
-
-### Fedora
+Run the AppImage
 
 ```
-dnf install ./rypub-1.0.x-x.x86_64.rpm
+./rypub-x.x.AppImage
 ```
-
----
-
-Or run the AppImage
 
 ## Usage
 
@@ -86,13 +68,12 @@ through the book using the left and right arrow keys, or by using the next and p
 To build the application for your current platform, you can run:
 
 ```
-npm run make
+npm run build
 ```
 
-This will create a distributable packages in the `out/make` directory.
+This will create a distributable packages in the `build` directory.
 
-
-## Support 
+## Support
 
 <a href="https://www.buymeacoffee.com/ryd3v" target="_blank">
   <img src="https://github.com/ryd3v/ryPub-Electron/blob/main/black-button.png" alt="Alt text" width="225" height="75">
@@ -100,5 +81,6 @@ This will create a distributable packages in the `out/make` directory.
 
 ## Contributing
 
-I welcome contributions to ryRub Simple Reader! If you have a bug fix, feature request, or other enhancement, feel free to open a
+I welcome contributions to ryRub Simple Reader! If you have a bug fix, feature request, or other enhancement, feel free
+to open a
 pull request.
