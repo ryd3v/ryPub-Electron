@@ -3,7 +3,7 @@
   "author": "Ryan Collins <hello@ryd3v.com>",
   "copyright": "© 2023 ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "ryPub Simple ePub Reader",
   "main": "src/main/main.js",
   "license": "MIT",

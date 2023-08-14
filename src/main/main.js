@@ -28,8 +28,8 @@ function createWindow() {
     })
     //mainWindow.webContents.openDevTools();
     mainWindow.loadFile('src/html/index.html')
-        .then(() => console.log('File loaded successfully'))
-        .catch(error => console.error(`Failed to load file: ${error}`));
+    // .then(() => console.log('File loaded successfully'))
+    // .catch(error => console.error(`Failed to load file: ${error}`));
 }
 
 app.whenReady().then(() => {
@@ -133,4 +133,17 @@ ipcMain.on('toc-ready', (event, toc) => {
 
     const menu = Menu.buildFromTemplate(generateMenu());
     Menu.setApplicationMenu(menu);
+});
+ipcMain.on('open-file-dialog', (event) => {
+    dialog.showOpenDialog(mainWindow, {
+        properties: ['openFile'],
+        filters: [
+            {name: 'ePub Files', extensions: ['epub']}
+        ]
+    }).then(result => {
+        if (!result.canceled && result.filePaths.length > 0) {
+            // Handle the selected file, e.g., send it to the renderer process
+            event.sender.send('file-opened', result.filePaths[0]);
+        }
+    });
 });

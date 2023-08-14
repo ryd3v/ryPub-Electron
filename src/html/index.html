@@ -7,6 +7,14 @@
     <link href="../styles/output.css" rel="stylesheet">
 </head>
 <body class="flex flex-col h-screen items-center justify-between box-border">
+<div class="w-full h-full flex flex-col items-center justify-center" id="splash-screen">
+    <h2 class="text-3xl font-semibold">Welcome to ryPub</h2>
+    <p class="text-lg">Open an ePub file to start reading.</p>
+    <button class="mt-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-md shadow"
+            id="open-file-button">Open
+        File
+    </button>
+</div>
 <div class="flex-1 w-full" id="viewer"></div>
 <div class="w-full flex flex-row justify-center px-4 mb-2">
     <button class="px-4 border-none outline-none" id="prev">

@@ -7,6 +7,7 @@ let rendition;
 
 ipcRenderer.on('file-opened',
     (event, file) => {
+        document.getElementById('splash-screen').style.display = 'none';
         const book = ePub(file);
         rendition = book.renderTo("viewer", {width: "100%", height: "100%"});
         book.ready.then(() => {
@@ -101,4 +102,8 @@ document.addEventListener("keydown", function (e) {
     } else if (e.key === "ArrowLeft") {
         rendition.prev();
     }
+});
+
+document.getElementById('open-file-button').addEventListener('click', () => {
+    ipcRenderer.send('open-file-dialog');
 });
