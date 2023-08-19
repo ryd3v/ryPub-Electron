@@ -26,10 +26,7 @@ function createWindow() {
             contextIsolation: false
         }
     })
-    //mainWindow.webContents.openDevTools();
     mainWindow.loadFile('src/html/index.html')
-    // .then(() => console.log('File loaded successfully'))
-    // .catch(error => console.error(`Failed to load file: ${error}`));
 }
 
 app.whenReady().then(() => {
