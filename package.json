@@ -3,7 +3,7 @@
   "author": "Ryan Collins <hello@ryd3v.com>",
   "copyright": "© 2023 ryd3v.",
   "homepage": "https://ryd3v.com",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "ryPub Simple ePub Reader",
   "main": "src/main/main.js",
   "license": "MIT",
@@ -20,7 +20,7 @@
     },
     "linux": {
       "category": "Office",
-      "icon": "src/images/book-icon.png",
+      "icon": "src/images/book.png",
       "target": [
         "AppImage"
       ]
@@ -28,7 +28,7 @@
     "win": {
       "target": "nsis",
       "publisherName": "Ryan Collins",
-      "icon": "src/images/book-icon.ico"
+      "icon": "src/images/book.ico"
     }
   },
   "dependencies": {
