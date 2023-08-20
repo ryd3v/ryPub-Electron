@@ -20,7 +20,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 600,
         height: 900,
-        icon: "src/images/book-icon.png",
+        icon: "src/images/book.png",
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
