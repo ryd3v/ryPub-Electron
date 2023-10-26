@@ -1,6 +1,6 @@
 module.exports = {
     packagerConfig: {
-        icon: 'src/images/book',
+        icon: 'images/book',
         asar: true,
     },
     rebuildConfig: {},
@@ -15,14 +15,19 @@ module.exports = {
         },
         {
             name: '@electron-forge/maker-deb',
-            config: {},
+            config: {
+                options: {
+                    icon: 'images/book.png',
+                    category: "Office"
+                }
+            },
         },
         {
             name: '@electron-forge/maker-rpm',
             config: {
                 options: {
                     icon: 'src/images/book.png',
-                    category: "Utilities",
+                    category: "Office"
                 },
             },
         },
