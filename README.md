@@ -85,4 +85,4 @@ This will create a distributable packages in the `build` directory.
 
 I welcome contributions to ryRub Simple Reader! If you have a bug fix, feature request, or other enhancement, feel free
 to open a
-pull request.
+pull request. V2.0.11
