@@ -32,21 +32,21 @@
     }
   },
   "dependencies": {
-    "electron-store": "^8.1.0",
+    "electron-store": "^8.2.0",
     "epub": "^1.2.1",
     "epubjs": "^0.3.93"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^7.3.0",
-    "@electron-forge/maker-deb": "^7.3.0",
-    "@electron-forge/maker-rpm": "^7.3.0",
-    "@electron-forge/maker-squirrel": "^7.3.0",
-    "@electron-forge/maker-zip": "^7.3.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
-    "electron": "^29.1.0",
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "electron": "^30.0.1",
     "electron-builder": "^24.13.3",
     "electron-builder-squirrel-windows": "^24.13.3",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.3",
     "xml2js": "^0.6.2"
   }
 }
