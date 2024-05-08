@@ -3,7 +3,7 @@
   "author": "Ryan Collins <hello@ryd3v.com>",
   "copyright": "© 2024 ryd3v",
   "homepage": "https://ryd3v.com",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "ryPub Simple ePub Reader",
   "main": "src/main/main.js",
   "license": "MIT",
@@ -32,7 +32,6 @@
     }
   },
   "dependencies": {
-    "electron-store": "^8.2.0",
     "epub": "^1.2.1",
     "epubjs": "^0.3.93"
   },
@@ -43,7 +42,7 @@
     "@electron-forge/maker-squirrel": "^7.4.0",
     "@electron-forge/maker-zip": "^7.4.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
-    "electron": "^30.0.1",
+    "electron": "^30.0.2",
     "electron-builder": "^24.13.3",
     "electron-builder-squirrel-windows": "^24.13.3",
     "tailwindcss": "^3.4.3",
