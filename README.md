@@ -1,4 +1,6 @@
-﻿# ryPub: A Simple EPUB Reader
+# This project has now been replaced by [rypub-qt](https://github.com/ryd3v/rypub-qt)
+ 
+ ## ryPub: A Simple EPUB Reader
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
