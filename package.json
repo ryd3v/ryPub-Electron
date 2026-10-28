@@ -42,7 +42,7 @@
     "@electron-forge/maker-squirrel": "^8.0.1",
     "@electron-forge/maker-zip": "^8.0.1",
     "@electron-forge/plugin-auto-unpack-natives": "^8.0.1",
-    "electron": "^44.7.2",
+    "electron": "^44.9.1",
     "electron-builder": "^26.15.3",
     "electron-builder-squirrel-windows": "^26.15.3",
     "tailwindcss": "^4.3.3",
